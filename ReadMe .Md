@@ -47,10 +47,11 @@ Create a `.env` file in the root directory and add the following variables:
 
 ```env
 PORT=3000
-DB_URI=mongodb+srv://YOUR_MONGO_URI
+DB_URI=mongodb+srv://bharath12:bharath12@cluster0.fkqim.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 JWT_SECRET=your_jwt_secret
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_email_password
+EMAIL_USER="bharathgoud.n48@gmail.com"
+EMAIL_PASS="gugj pxos hmqm ozvh"
+
 ```
 
 - **DB_URI:** MongoDB connection URI (use MongoDB Atlas if you're using a cloud database).
