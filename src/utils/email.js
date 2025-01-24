@@ -13,7 +13,7 @@ exports.sendVerificationEmail = (user) => {
     from: process.env.EMAIL_USER,
     to: user.email,
     subject: 'Verify your email',
-    text: `Click the link to verify your email: http://localhost:3000/verify/verify/${user._id}`,
+    text: `Click the link to verify your email: https://blogs-apis-1.onrender.com/verify/${user._id}`,
   };
 
   transporter.sendMail(mailOptions, (err, info) => {
