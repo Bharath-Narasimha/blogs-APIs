@@ -6,16 +6,15 @@ const router = express.Router();
 router.get('/verify/:userId', async (req, res) => {
   try {
     const userId = req.params.userId;
+    console.log(`Verifying user with ID: ${userId}`); // Debugging log
 
-    // Find the user by the ID
     const user = await User.findById(userId);
 
     if (!user) {
       return res.status(404).send('User not found');
     }
 
-    // Verify the user's email
-    user.isVerified = true; // Assuming you have this field
+    user.isVerified = true;
     await user.save();
 
     res.send('Email verified successfully!');
@@ -24,5 +23,6 @@ router.get('/verify/:userId', async (req, res) => {
     res.status(500).send('Error verifying email');
   }
 });
+
 
 module.exports = router;
