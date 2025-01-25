@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/verify/:userId', async (req, res) => {
   try {
     const userId = req.params.userId;
-    console.log(`Verifying user with ID: ${userId}`); // Debugging log
+    console.log(`Received verification request for user: ${userId}`);  // Log userId
 
     const user = await User.findById(userId);
 
@@ -19,7 +19,7 @@ router.get('/verify/:userId', async (req, res) => {
 
     res.send('Email verified successfully!');
   } catch (error) {
-    console.error(error);
+    console.error('Error during verification:', error);  // Improved error logging
     res.status(500).send('Error verifying email');
   }
 });
